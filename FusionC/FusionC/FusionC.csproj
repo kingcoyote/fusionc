@@ -60,6 +60,9 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LzmaSharp">
+      <HintPath>nuclex\LzmaSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
     </Reference>
@@ -90,6 +93,61 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
+    <Reference Include="NMock.StrongNamed">
+      <HintPath>nuclex\NMock.StrongNamed.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Audio">
+      <HintPath>nuclex\Nuclex.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Fonts">
+      <HintPath>nuclex\Nuclex.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Fonts.Content.TrueTypeImporter">
+      <HintPath>nuclex\Nuclex.Fonts.Content.TrueTypeImporter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Game">
+      <HintPath>nuclex\Nuclex.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Game.ContentCompressor">
+      <HintPath>nuclex\Nuclex.Game.ContentCompressor.exe</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Geometry">
+      <HintPath>nuclex\Nuclex.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Graphics">
+      <HintPath>nuclex\Nuclex.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Graphics.SpecialEffects">
+      <HintPath>nuclex\Nuclex.Graphics.SpecialEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Input">
+      <HintPath>nuclex\Nuclex.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Math">
+      <HintPath>nuclex\Nuclex.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Networking">
+      <HintPath>nuclex\Nuclex.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Support">
+      <HintPath>nuclex\Nuclex.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Testing.Xna">
+      <HintPath>nuclex\Nuclex.Testing.Xna.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.UserInterface">
+      <HintPath>nuclex\Nuclex.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Windows.Forms">
+      <HintPath>nuclex\Nuclex.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>nuclex\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX.DirectInput">
+      <HintPath>nuclex\SlimDX.DirectInput.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -107,9 +165,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="FusionGame.cs" />
+    <Compile Include="States\MainMenuState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
