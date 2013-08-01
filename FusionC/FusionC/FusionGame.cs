@@ -1,16 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using FusionC.States;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using Nuclex.Game.States;
-using Nuclex.Input;
 using Nuclex.UserInterface;
 
 namespace FusionC
@@ -18,7 +9,7 @@ namespace FusionC
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class FusionGame : Microsoft.Xna.Framework.Game
+    public class FusionGame : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -31,12 +22,10 @@ namespace FusionC
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            _gui = new GuiManager(graphics, new InputManager());
-            Components.Add(_gui);
-
             IsMouseVisible = true;
 
             _gsm = new GameStateManager();
+            _gsm.Push(new MainMenuState(graphics, GraphicsDevice));
         }
 
         /// <summary>
@@ -47,17 +36,6 @@ namespace FusionC
         /// </summary>
         protected override void Initialize()
         {
-            var mainScreen = new Screen(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            
-            _gui.Screen = mainScreen;
-
-            mainScreen.Desktop.Bounds = new UniRectangle(
-              new UniScalar(0.1f, 0.0f), new UniScalar(0.1f, 0.0f),
-              new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
-            );
-
-            mainScreen.Desktop.Children.Add(new DemoDialog());
-
             base.Initialize();
         }
 
