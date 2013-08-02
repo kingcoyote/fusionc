@@ -15,20 +15,19 @@ namespace FusionC.States
     {
         private GuiManager _gui;
 
-        public MainMenuState(IGraphicsDeviceService graphics, GraphicsDevice gd)
+        public MainMenuState(IGraphicsDeviceService graphics, Game game)
         {
-            _gui = new GuiManager(graphics, new InputManager());
+            _gui = new GuiManager(graphics, new InputManager())
+                {
+                    Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
+                };
 
-            var mainScreen = new Screen(gd.Viewport.Width, gd.Viewport.Height);
-
-            _gui.Screen = mainScreen;
-
-            mainScreen.Desktop.Bounds = new UniRectangle(
+            _gui.Screen.Desktop.Bounds = new UniRectangle(
               new UniScalar(0.0f, 0.0f), new UniScalar(0.0f, 0.0f),
               new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
             );
 
-            mainScreen.Desktop.Children.Add(new DemoDialog());
+            _gui.Screen.Desktop.Children.Add(new DemoDialog());
         }
 
         public override void Update(GameTime gameTime)

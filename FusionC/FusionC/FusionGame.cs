@@ -11,21 +11,20 @@ namespace FusionC
     /// </summary>
     public class FusionGame : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        readonly GraphicsDeviceManager _graphics;
+        SpriteBatch _spriteBatch;
 
         private GameStateManager _gsm;
         private GuiManager _gui;
 
         public FusionGame()
         {
-            graphics = new GraphicsDeviceManager(this);
+            _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
             IsMouseVisible = true;
 
             _gsm = new GameStateManager();
-            _gsm.Push(new MainMenuState(graphics, GraphicsDevice));
         }
 
         /// <summary>
@@ -37,6 +36,8 @@ namespace FusionC
         protected override void Initialize()
         {
             base.Initialize();
+
+            _gsm.Push(new MainMenuState(_graphics, this));
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace FusionC
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         /// <summary>
