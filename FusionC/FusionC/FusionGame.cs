@@ -22,7 +22,8 @@ namespace FusionC
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            IsMouseVisible = true;
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
 
             _gsm = new GameStateManager();
         }
@@ -37,7 +38,7 @@ namespace FusionC
         {
             base.Initialize();
 
-            _gsm.Push(new MainMenuState(_graphics, this));
+            _gsm.Push(new MainMenuState(this, _graphics));
 
             _gsm.Initialize();
         }

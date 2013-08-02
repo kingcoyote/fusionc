@@ -14,9 +14,12 @@ namespace FusionC.States
     class MainMenuState : DrawableGameState
     {
         private GuiManager _gui;
+        private Game _game;
 
-        public MainMenuState(IGraphicsDeviceService graphics, Game game)
+        public MainMenuState(Game game, IGraphicsDeviceService graphics)
         {
+            _game = game;
+
             _gui = new GuiManager(graphics, new InputManager())
                 {
                     Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
@@ -30,6 +33,16 @@ namespace FusionC.States
             _gui.Screen.Desktop.Children.Add(new DemoDialog());
 
             _gui.Initialize();
+        }
+
+        protected override void OnResume()
+        {
+            _game.IsMouseVisible = true;
+        }
+
+        protected override void OnPause()
+        {
+            _game.IsMouseVisible = false;
         }
 
         public override void Update(GameTime gameTime)
