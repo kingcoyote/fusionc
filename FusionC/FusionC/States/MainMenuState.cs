@@ -28,11 +28,13 @@ namespace FusionC.States
             );
 
             _gui.Screen.Desktop.Children.Add(new DemoDialog());
+
+            _gui.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
-            
+            _gui.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)

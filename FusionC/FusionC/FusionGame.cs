@@ -38,6 +38,8 @@ namespace FusionC
             base.Initialize();
 
             _gsm.Push(new MainMenuState(_graphics, this));
+
+            _gsm.Initialize();
         }
 
         /// <summary>
