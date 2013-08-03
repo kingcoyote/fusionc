@@ -170,6 +170,10 @@
       <DependentUpon>DemoDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FusionGameState.cs" />
+    <Compile Include="MainMenuDialog.cs" />
+    <Compile Include="MainMenuDialog.designer.cs">
+      <DependentUpon>MainMenuDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="FusionGame.cs" />

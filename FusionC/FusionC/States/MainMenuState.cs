@@ -9,7 +9,12 @@ namespace FusionC.States
     {
         public MainMenuState(FusionGame game) : base(game)
         {
-            Gui.Screen.Desktop.Children.Add(new DemoDialog());
+            var mainMenuDialog = new MainMenuDialog();
+            mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
+            mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
+
+            Gui.Screen.Desktop.Children.Add(mainMenuDialog);
+            Game.IsMouseVisible = true;
         }
     }
 }
