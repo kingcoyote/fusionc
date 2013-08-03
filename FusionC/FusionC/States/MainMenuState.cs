@@ -14,13 +14,13 @@ namespace FusionC.States
     class MainMenuState : DrawableGameState
     {
         private GuiManager _gui;
-        private Game _game;
+        private FusionGame _game;
 
-        public MainMenuState(Game game, IGraphicsDeviceService graphics)
+        public MainMenuState(FusionGame game)
         {
             _game = game;
 
-            _gui = new GuiManager(graphics, new InputManager())
+            _gui = new GuiManager(_game.Graphics, new InputManager())
                 {
                     Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
                 };

@@ -11,7 +11,7 @@ namespace FusionC
     /// </summary>
     public class FusionGame : Game
     {
-        readonly GraphicsDeviceManager _graphics;
+        public GraphicsDeviceManager Graphics { get; private set; }
         SpriteBatch _spriteBatch;
 
         private GameStateManager _gsm;
@@ -19,11 +19,11 @@ namespace FusionC
 
         public FusionGame()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            Graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            _graphics.PreferredBackBufferWidth = 1024;
-            _graphics.PreferredBackBufferHeight = 768;
+            Graphics.PreferredBackBufferWidth = 1024;
+            Graphics.PreferredBackBufferHeight = 768;
 
             _gsm = new GameStateManager();
         }
@@ -38,7 +38,7 @@ namespace FusionC
         {
             base.Initialize();
 
-            _gsm.Push(new MainMenuState(this, _graphics));
+            _gsm.Push(new MainMenuState(this));
 
             _gsm.Initialize();
         }
