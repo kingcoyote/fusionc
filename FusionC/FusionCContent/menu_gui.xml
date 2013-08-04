@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<skin
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="skin.xsd"
+  name="MySkin"
+>
+
+  <resources>
+    <!--<font name="MyDefaultFont" contentPath="Content/Fonts/MyFont" />-->
+    <bitmap name="MySkinBitmap" contentPath="Content/menu_skin" />
+  </resources>
+
+  <frames>
+    <!-- Frame used for a pushbutton in its normal state -->
+    <frame name="button.normal">
+      <region source="MySkinBitmap" hplacement="left" vplacement="top" x="1" y="62" w="4" h="4" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="top" x="5" y="62" w="11" h="4" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="top" x="16" y="62" w="3" h="4" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="stretch" x="1" y="66" w="4" h="6" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="stretch" x="5" y="66" w="11" h="6" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="stretch" x="16" y="66" w="3" h="6" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="bottom" x="1" y="72" w="4" h="3" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="bottom" x="5" y="72" w="11" h="3" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="bottom" x="16" y="72" w="3" h="3" />
+    </frame>
+  </frames>
+
+</skin>
