@@ -12,6 +12,7 @@
 
   <frames>
     <!-- Frame used for a pushbutton in its normal state -->
+    
     <frame name="button.normal">
       <region source="MySkinBitmap" hplacement="left" vplacement="top" x="1" y="62" w="4" h="4" />
       <region source="MySkinBitmap" hplacement="stretch" vplacement="top" x="5" y="62" w="11" h="4" />
@@ -25,8 +26,17 @@
     </frame>
 
     <frame name="window">
-      
+      <region source="MySkinBitmap" hplacement="left" vplacement="top" x="0" y="0" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="top" x="10" y="0" w="1" h="10" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="top" x="11" y="0" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="stretch" x="0" y="10" w="10" h="1" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="stretch" x="10" y="10" w="1" h="1" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="stretch" x="11" y="10" w="10" h="1" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="bottom" x="0" y="11" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="bottom" x="10" y="11" w="1" h="10" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="bottom" x="11" y="11" w="10" h="10" />
     </frame>
+    
   </frames>
 
 </skin>

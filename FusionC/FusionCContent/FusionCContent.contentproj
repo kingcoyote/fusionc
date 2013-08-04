@@ -51,7 +51,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="menu_skin.bmp">
+    <Compile Include="menu_skin.png">
       <Name>menu_skin</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
