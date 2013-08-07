@@ -11,6 +11,13 @@ namespace FusionC
         public MainMenuDialog()
         {
             InitializeComponent();
+
+            _startButton.Pressed += StartGame;
+        }
+
+        private void StartGame(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -55,5 +55,12 @@ namespace FusionC.States
 
             base.Draw(gameTime);
         }
+
+        public override void Update(GameTime gameTime)
+        {
+            Gui.Update(gameTime);
+
+            base.Update(gameTime);
+        }
     }
 }
