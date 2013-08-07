@@ -14,6 +14,7 @@ namespace FusionC.States
     {
         private SpriteBatch _spriteBatch;
         private Texture2D _menuBg;
+        private InputManager _input;
 
         public MainMenuState(FusionGame game) : base(game)
         {
@@ -21,7 +22,9 @@ namespace FusionC.States
             mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
             mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
 
-            Gui = new GuiManager(Game.Graphics, new InputManager())
+            _input = new InputManager(game.Services);
+
+            Gui = new GuiManager(Game.Graphics, _input)
             {
                 Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
             };
@@ -57,6 +60,8 @@ namespace FusionC.States
         public override void Update(GameTime gameTime)
         {
             Gui.Update(gameTime);
+
+            _input.Update();
 
             base.Update(gameTime);
         }
