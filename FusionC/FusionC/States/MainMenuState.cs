@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Nuclex.Input;
+using Nuclex.UserInterface;
 using Nuclex.UserInterface.Visuals.Flat;
 
 namespace FusionC.States
@@ -18,6 +20,18 @@ namespace FusionC.States
             var mainMenuDialog = new MainMenuDialog();
             mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
             mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
+
+            Gui = new GuiManager(Game.Graphics, new InputManager())
+            {
+                Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
+            };
+
+            Gui.Screen.Desktop.Bounds = new UniRectangle(
+              new UniScalar(0.0f, 0.0f), new UniScalar(0.0f, 0.0f),
+              new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
+            );
+
+            Gui.Initialize();
 
             Gui.Screen.Desktop.Children.Add(mainMenuDialog);
 
@@ -36,6 +50,8 @@ namespace FusionC.States
             _spriteBatch.Begin();
             _spriteBatch.Draw(_menuBg, new Vector2(0, 0), Color.White);
             _spriteBatch.End();
+
+            Gui.Draw(gameTime);
 
             base.Draw(gameTime);
         }
