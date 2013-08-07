@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-
+using Microsoft.Xna.Framework.Graphics;
 using Nuclex.UserInterface.Visuals.Flat;
 
 namespace FusionC.States
 {
     class MainMenuState : FusionGameState
     {
+        private SpriteBatch _spriteBatch;
+        private Texture2D _menuBg;
+
         public MainMenuState(FusionGame game) : base(game)
         {
             var mainMenuDialog = new MainMenuDialog();
@@ -21,6 +24,20 @@ namespace FusionC.States
             Gui.Visualizer = FlatGuiVisualizer.FromFile(game.Services, "Content/menu_gui.xml");
 
             Game.IsMouseVisible = true;
+
+            _spriteBatch = new SpriteBatch(game.GraphicsDevice);
+            _menuBg = Game.Content.Load<Texture2D>("menu_bg");
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            
+            
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(_menuBg, new Vector2(0, 0), Color.White);
+            _spriteBatch.End();
+
+            base.Draw(gameTime);
         }
     }
 }

@@ -17,29 +17,33 @@ namespace FusionC
             _exitButton = new ButtonControl();
 
             Children.Add(_startButton);
-            //Children.Add(_helpButton);
-            //Children.Add(_highscoresButton);
-            //Children.Add(_exitButton);
+            Children.Add(_helpButton);
+            Children.Add(_highscoresButton);
+            Children.Add(_exitButton);
 
             // 
             // _startButton
             //
-            _startButton.Bounds = new UniRectangle(
-                25, 25, 150, 40
-            );
+            _startButton.Bounds = new UniRectangle(25, 25, 150, 40);
             _startButton.Text = "Start";
 
             //
             // _helpButton
             //
+            _helpButton.Bounds = new UniRectangle(25, 70, 150, 40);
+            _helpButton.Text = "Help";
 
             //
             // _highscoresButton
             //
+            _highscoresButton.Bounds = new UniRectangle(25, 115, 150, 40);
+            _highscoresButton.Text = "High Scores";
 
             //
             // _exitButton
             //
+            _exitButton.Bounds = new UniRectangle(25, 335, 150, 40);
+            _exitButton.Text = "Exit";
 
             Bounds = new UniRectangle(0, 0, 200, 400);
         }

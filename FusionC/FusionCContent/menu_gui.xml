@@ -6,7 +6,7 @@
 >
 
   <resources>
-    <!--<font name="MyDefaultFont" contentPath="Content/Fonts/MyFont" />-->
+    <font name="MyDefaultFont" contentPath="menu_font" />
     <bitmap name="MySkinBitmap" contentPath="menu_skin" />
   </resources>
 
@@ -23,6 +23,18 @@
       <region source="MySkinBitmap" hplacement="left" vplacement="bottom" x="21" y="11" w="10" h="10" />
       <region source="MySkinBitmap" hplacement="stretch" vplacement="bottom" x="31" y="11" w="1" h="10" />
       <region source="MySkinBitmap" hplacement="right" vplacement="bottom" x="32" y="11" w="10" h="10" />
+    </frame>
+
+    <frame name="button.depressed">
+      <region source="MySkinBitmap" hplacement="left" vplacement="top" x="0" y="0" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="top" x="10" y="0" w="1" h="10" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="top" x="11" y="0" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="stretch" x="0" y="10" w="10" h="1" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="stretch" x="10" y="10" w="1" h="1" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="stretch" x="11" y="10" w="10" h="1" />
+      <region source="MySkinBitmap" hplacement="left" vplacement="bottom" x="0" y="11" w="10" h="10" />
+      <region source="MySkinBitmap" hplacement="stretch" vplacement="bottom" x="10" y="11" w="1" h="10" />
+      <region source="MySkinBitmap" hplacement="right" vplacement="bottom" x="11" y="11" w="10" h="10" />
     </frame>
 
     <frame name="window">
