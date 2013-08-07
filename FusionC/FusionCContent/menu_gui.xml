@@ -23,6 +23,7 @@
       <region source="MySkinBitmap" hplacement="left" vplacement="bottom" x="21" y="11" w="10" h="10" />
       <region source="MySkinBitmap" hplacement="stretch" vplacement="bottom" x="31" y="11" w="1" h="10" />
       <region source="MySkinBitmap" hplacement="right" vplacement="bottom" x="32" y="11" w="10" h="10" />
+      <text font="MyDefaultFont" hplacement="center" vplacement="center" color="#EFEFEF" />
     </frame>
 
     <frame name="button.depressed">
