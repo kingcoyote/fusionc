@@ -45,8 +45,6 @@ namespace FusionC.States
 
         public override void Draw(GameTime gameTime)
         {
-            
-            
             _spriteBatch.Begin();
             _spriteBatch.Draw(_menuBg, new Vector2(0, 0), Color.White);
             _spriteBatch.End();
