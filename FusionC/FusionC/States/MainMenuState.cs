@@ -66,10 +66,10 @@ namespace FusionC.States
             Gui.Screen.Desktop.Children.Add(confirmDialog);
 
             confirmDialog.Bounds = new UniRectangle(
-                new UniScalar(0.5F, -100),
-                new UniScalar(0.5F, -100),
-                confirmDialog.Bounds.Size.X,
-                confirmDialog.Bounds.Size.Y
+                (1024 - confirmDialog.Bounds.Size.X.Offset) / 2.0F,
+                (768 - confirmDialog.Bounds.Size.Y.Offset) / 2.0F,
+                confirmDialog.Bounds.Size.X.Offset,
+                confirmDialog.Bounds.Size.Y.Offset
             );
         }
 
