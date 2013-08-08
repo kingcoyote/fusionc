@@ -46,6 +46,7 @@ namespace FusionC
             _exitButton.Text = "Exit";
 
             Bounds = new UniRectangle(0, 0, 200, 400);
+            EnableDragging = false;
         }
 
         private ButtonControl _startButton;

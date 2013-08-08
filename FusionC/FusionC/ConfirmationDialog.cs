@@ -27,6 +27,8 @@ namespace FusionC
                     Confirm = false;
                     OnConfirm.Invoke(sender, args);
                 };
+
+            EnableDragging = false;
         }
     }
 }
