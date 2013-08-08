@@ -52,6 +52,10 @@
       <text font="menu_font" hplacement="center" vplacement="center" color="#17daf7" />
     </frame>
 
+    <frame name="label">
+      <text font="menu_font" hplacement="left" vplacement="top" color="#FFFFFF" />
+    </frame>
+
     <frame name="window">
       <region source="menu_skin_bitmap" hplacement="left" vplacement="top" x="0" y="0" w="10" h="10" />
       <region source="menu_skin_bitmap" hplacement="stretch" vplacement="top" x="10" y="0" w="1" h="10" />
