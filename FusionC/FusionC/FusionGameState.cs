@@ -19,6 +19,11 @@ namespace FusionC
             Input = new InputManager(game.Services);
         }
 
+        public virtual void EndState()
+        {
+            Game.EndState();
+        }
+
         public override void Draw(GameTime gameTime)
         {
             
