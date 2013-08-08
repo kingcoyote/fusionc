@@ -15,7 +15,6 @@ namespace FusionC
         SpriteBatch _spriteBatch;
 
         private GameStateManager _gsm;
-        private GuiManager _gui;
 
         public FusionGame()
         {

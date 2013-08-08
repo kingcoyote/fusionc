@@ -21,10 +21,7 @@ namespace FusionC.States
             mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
             mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
             mainMenuDialog.OnExitButtonPressed += ExitConfirmation;
-            mainMenuDialog.OnStartButtonPressed += (sender, args) =>
-                {
-                    game.StartGame();
-                };
+            mainMenuDialog.OnStartButtonPressed += (sender, args) => game.StartGame();
 
             Gui = new GuiManager(Game.Graphics, Input)
             {
