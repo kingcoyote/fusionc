@@ -165,6 +165,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmationDialog.cs" />
+    <Compile Include="ConfirmationDialog.designer.cs">
+      <DependentUpon>ConfirmationDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DemoDialog.cs" />
     <Compile Include="DemoDialog.designer.cs">
       <DependentUpon>DemoDialog.cs</DependentUpon>
