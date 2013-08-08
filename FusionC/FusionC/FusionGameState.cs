@@ -9,11 +9,13 @@ namespace FusionC
     {
         protected GuiManager Gui;
         protected FusionGame Game;
-        protected InputManager Input;
+        static protected InputManager Input;
 
         public FusionGameState(FusionGame game)
         {
             Game = game;
+
+            if (Input != null) return;
             Input = new InputManager(game.Services);
         }
 
