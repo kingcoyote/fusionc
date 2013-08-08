@@ -27,7 +27,7 @@ namespace FusionC
             //
             // label
             //
-            _label.Bounds = new UniRectangle(25, 25, 500, 75);
+            _label.Bounds = new UniRectangle(25, 15, 500, 45);
             _label.Text = "";
 
             //
@@ -42,7 +42,7 @@ namespace FusionC
             _noButton.Bounds = new UniRectangle(new UniScalar(1.0F, -160), new UniScalar(1.0F, -45), 70, 30);
             _noButton.Text = "No";
 
-            Bounds = new UniRectangle(0, 0, 550, 150);
+            Bounds = new UniRectangle(0, 0, 550, 120);
         }
     }
 }
