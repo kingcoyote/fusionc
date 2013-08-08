@@ -16,7 +16,7 @@ namespace FusionC
         {
             base.Update(gametime);
 
-            if(Input.GetKeyboard().GetState().IsKeyDown(Keys.Escape))
+            if(Game.Input.GetKeyboard().GetState().IsKeyDown(Keys.Escape))
             {
                 EndState();
             }

@@ -23,7 +23,7 @@ namespace FusionC.States
             mainMenuDialog.OnExitButtonPressed += ExitConfirmation;
             mainMenuDialog.OnStartButtonPressed += (sender, args) => game.StartGame();
 
-            Gui = new GuiManager(Game.Graphics, Input)
+            Gui = new GuiManager(Game.Graphics, Game.Input)
             {
                 Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
             };

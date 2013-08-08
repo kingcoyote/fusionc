@@ -2,6 +2,7 @@ using FusionC.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Nuclex.Game.States;
+using Nuclex.Input;
 using Nuclex.UserInterface;
 
 namespace FusionC
@@ -15,6 +16,7 @@ namespace FusionC
         SpriteBatch _spriteBatch;
 
         private GameStateManager _gsm;
+        public readonly InputManager Input;
 
         public FusionGame()
         {
@@ -25,6 +27,8 @@ namespace FusionC
             Graphics.PreferredBackBufferHeight = 768;
 
             _gsm = new GameStateManager();
+
+            Input = new InputManager(Services);
         }
 
         /// <summary>
@@ -68,6 +72,8 @@ namespace FusionC
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            Input.Update();
+
             _gsm.Update(gameTime);
 
             base.Update(gameTime);

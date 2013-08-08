@@ -9,14 +9,10 @@ namespace FusionC
     {
         protected GuiManager Gui;
         protected FusionGame Game;
-        static protected InputManager Input;
 
         public FusionGameState(FusionGame game)
         {
             Game = game;
-
-            if (Input != null) return;
-            Input = new InputManager(game.Services);
         }
 
         public virtual void EndState()
@@ -31,7 +27,7 @@ namespace FusionC
 
         public override void Update(GameTime gametime)
         {
-            Input.Update();
+            
         }
     }
 }
