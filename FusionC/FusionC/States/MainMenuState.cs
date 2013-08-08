@@ -51,7 +51,17 @@ namespace FusionC.States
         {
             var confirmDialog = new ConfirmationDialog("Are you sure you would like to exit?");
 
-            confirmDialog.OnConfirm += (s, a) => { };
+            confirmDialog.OnConfirm += (s, a) =>
+                {
+                    if(confirmDialog.Confirm == false)
+                    {
+                        Gui.Screen.Desktop.Children.Remove(confirmDialog);
+                    }
+                    else
+                    {
+                        Game.Exit();
+                    }
+                };
 
             Gui.Screen.Desktop.Children.Add(confirmDialog);
 
