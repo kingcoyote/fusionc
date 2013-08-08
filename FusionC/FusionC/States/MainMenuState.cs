@@ -21,6 +21,7 @@ namespace FusionC.States
             var mainMenuDialog = new MainMenuDialog();
             mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
             mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
+            mainMenuDialog.OnExitButtonPressed += ExitConfirmation;
 
             _input = new InputManager(game.Services);
 
@@ -44,6 +45,22 @@ namespace FusionC.States
 
             _spriteBatch = new SpriteBatch(game.GraphicsDevice);
             _menuBg = Game.Content.Load<Texture2D>("menu_bg");
+        }
+
+        private void ExitConfirmation(object sender, EventArgs e)
+        {
+            var confirmDialog = new ConfirmationDialog("Are you sure you would like to exit?");
+
+            confirmDialog.OnConfirm += (s, a) => { };
+
+            Gui.Screen.Desktop.Children.Add(confirmDialog);
+
+            confirmDialog.Bounds = new UniRectangle(
+                new UniScalar(0.5F, -100),
+                new UniScalar(0.5F, -100),
+                confirmDialog.Bounds.Size.X,
+                confirmDialog.Bounds.Size.Y
+            );
         }
 
         public override void Draw(GameTime gameTime)
