@@ -87,6 +87,11 @@ namespace FusionC
             base.Draw(gameTime);
         }
 
+        public void StartGame()
+        {
+            _gsm.Push(new CombatGameState(this));
+        }
+
         public void EndState()
         {
             _gsm.Pop();
