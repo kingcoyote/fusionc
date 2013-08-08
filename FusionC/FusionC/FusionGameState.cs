@@ -10,11 +10,13 @@ namespace FusionC
         protected GuiManager Gui;
         protected FusionGame Game;
         protected GameComponentCollection Components;
+        protected InputManager Input;
 
         public FusionGameState(FusionGame game)
         {
             Game = game;
             Components = new GameComponentCollection();
+            Input = new InputManager(game.Services);
         }
 
         public override void Draw(GameTime gameTime)
@@ -24,7 +26,7 @@ namespace FusionC
 
         public override void Update(GameTime gametime)
         {
-            
+            Input.Update();
         }
     }
 }
