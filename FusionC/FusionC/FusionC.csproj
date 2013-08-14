@@ -165,7 +165,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CombatGameState.cs" />
+    <Compile Include="CombatPlayerDialog.cs" />
+    <Compile Include="CombatPlayerDialog.Designer.cs">
+      <DependentUpon>CombatPlayerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CombatScoreDialog.cs" />
+    <Compile Include="CombatScoreDialog.Designer.cs">
+      <DependentUpon>CombatScoreDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CombatWaveDialog.cs" />
+    <Compile Include="CombatWaveDialog.Designer.cs">
+      <DependentUpon>CombatWaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerShip.cs" />
+    <Compile Include="States\CombatGameState.cs" />
     <Compile Include="ConfirmationDialog.cs" />
     <Compile Include="ConfirmationDialog.designer.cs">
       <DependentUpon>ConfirmationDialog.cs</DependentUpon>
