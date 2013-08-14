@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Linq;
+using Microsoft.Xna.Framework;
 using Nuclex.Game.States;
 using Nuclex.Input;
 using Nuclex.UserInterface;
@@ -10,6 +11,7 @@ namespace FusionC
     {
         protected GuiManager Gui;
         protected FusionGame Game;
+        protected GameComponentCollection Components;
 
         public FusionGameState(FusionGame game)
         {
@@ -28,6 +30,10 @@ namespace FusionC
             Gui.Initialize();
 
             Gui.Visualizer = FlatGuiVisualizer.FromFile(game.Services, "Content/menu_gui.xml");
+
+            Gui.UpdateOrder = 1000;
+
+            Components = new GameComponentCollection { Gui };
         }
 
         public virtual void EndState()
@@ -35,14 +41,20 @@ namespace FusionC
             Game.EndState();
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void Draw(GameTime gametime)
         {
-            Gui.Draw(gameTime);
+            foreach(var component in (from IDrawable c in Components orderby c.DrawOrder select c).ToArray())
+            {
+                component.Draw(gametime);
+            }
         }
 
         public override void Update(GameTime gametime)
         {
-            Gui.Update(gametime);
+            foreach(var component in (from IUpdateable c in Components orderby c.UpdateOrder select c).ToArray())
+            {
+                component.Update(gametime);
+            }
         }
     }
 }
