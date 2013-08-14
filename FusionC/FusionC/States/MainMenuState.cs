@@ -23,21 +23,7 @@ namespace FusionC.States
             mainMenuDialog.OnExitButtonPressed += ExitConfirmation;
             mainMenuDialog.OnStartButtonPressed += (sender, args) => game.StartGame();
 
-            Gui = new GuiManager(Game.Graphics, Game.Input)
-            {
-                Screen = new Screen(game.GraphicsDevice.Viewport.Width, game.GraphicsDevice.Viewport.Height)
-            };
-
-            Gui.Screen.Desktop.Bounds = new UniRectangle(
-              new UniScalar(0.0f, 0.0f), new UniScalar(0.0f, 0.0f),
-              new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
-            );
-
-            Gui.Initialize();
-
             Gui.Screen.Desktop.Children.Add(mainMenuDialog);
-
-            Gui.Visualizer = FlatGuiVisualizer.FromFile(game.Services, "Content/menu_gui.xml");
 
             Game.IsMouseVisible = true;
 
@@ -77,16 +63,12 @@ namespace FusionC.States
             _spriteBatch.Draw(_menuBg, new Vector2(0, 0), Color.White);
             _spriteBatch.End();
 
-            Gui.Draw(gameTime);
-
             base.Draw(gameTime);
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            
-            Gui.Update(gameTime);
         }
     }
 }
