@@ -43,6 +43,11 @@ namespace FusionC
             dialog.Bounds.Location.X = Gui.Screen.Width - dialog.Bounds.Size.X - dialogPadding;
             dialog.Bounds.Location.Y = Gui.Screen.Height - dialog.Bounds.Size.Y - dialogPadding;
             Gui.Screen.Desktop.Children.Add(dialog);
+
+            dialog = new CombatWeaponDialog(this);
+            dialog.Bounds.Location.X = Gui.Screen.Width - dialog.Bounds.Size.X - dialogPadding;
+            dialog.Bounds.Location.Y = dialogPadding;
+            Gui.Screen.Desktop.Children.Add(dialog);
         }
 
         public override void Update(GameTime gametime)

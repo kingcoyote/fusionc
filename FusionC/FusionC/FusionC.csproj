@@ -177,6 +177,10 @@
     <Compile Include="CombatWaveDialog.Designer.cs">
       <DependentUpon>CombatWaveDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="CombatWeaponDialog.cs" />
+    <Compile Include="CombatWeaponDialog.Designer.cs">
+      <DependentUpon>CombatWeaponDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerShip.cs" />
     <Compile Include="States\CombatGameState.cs" />
     <Compile Include="ConfirmationDialog.cs" />
