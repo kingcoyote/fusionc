@@ -17,11 +17,14 @@ namespace FusionC
         private int _wave;
         private int _playerLives;
 
+        private int _countdownTimer;
+
         public CombatGameState(FusionGame game) : base(game)
         {
             _gameState = StateList.Countdown;
             _wave = 1;
             _playerLives = 3;
+            _countdownTimer = 5000;
 
             _playerShip = new PlayerShip();
 
@@ -62,6 +65,11 @@ namespace FusionC
             switch(_gameState)
             {
                 case StateList.Countdown:
+                    _countdownTimer -= gametime.ElapsedGameTime.Milliseconds;
+                    if(_countdownTimer <= 0)
+                    {
+                        _gameState = StateList.Action;
+                    }
                     break;
                 case StateList.Action:
                     break;
