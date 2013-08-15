@@ -12,6 +12,7 @@ namespace FusionC
         private void InitializeComponent()
         {
             Bounds = new UniRectangle(0, 0, 300, 80);
+            EnableDragging = false;
         }
     }
 }

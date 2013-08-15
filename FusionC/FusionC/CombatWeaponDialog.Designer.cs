@@ -12,6 +12,7 @@ namespace FusionC
         private void InitializeComponent()
         {
             Bounds = new UniRectangle(0, 0, 275, 80);
+            EnableDragging = false;
 
             // create row of hotbar icons for the 4 weapon types:
             //   cannon
