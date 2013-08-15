@@ -181,6 +181,7 @@
     <Compile Include="CombatWeaponDialog.Designer.cs">
       <DependentUpon>CombatWeaponDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageButtonControl.cs" />
     <Compile Include="PlayerShip.cs" />
     <Compile Include="States\CombatGameState.cs" />
     <Compile Include="ConfirmationDialog.cs" />
