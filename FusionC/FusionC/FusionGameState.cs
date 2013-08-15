@@ -30,6 +30,7 @@ namespace FusionC
             Gui.Initialize();
 
             Gui.Visualizer = FlatGuiVisualizer.FromFile(game.Services, "Content/menu_gui.xml");
+            ((FlatGuiVisualizer)Gui.Visualizer).RendererRepository.AddAssembly(typeof(FlatImageButtonControlRenderer).Assembly);
 
             Gui.UpdateOrder = 1000;
 
