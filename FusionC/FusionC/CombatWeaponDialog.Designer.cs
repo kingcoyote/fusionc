@@ -31,6 +31,7 @@ namespace FusionC
                 new UniScalar(0.0F, 50)
             );
             hotkey.Text = "CAN";
+            hotkey.ImageFrame = "hotbar.cannon";
             Children.Add(hotkey);
 
             // laser
@@ -42,6 +43,7 @@ namespace FusionC
                 new UniScalar(0.0F, 50)
             );
             hotkey.Text = "LAS";
+            hotkey.ImageFrame = "hotbar.laser";
             Children.Add(hotkey);
 
             // missile
@@ -53,6 +55,7 @@ namespace FusionC
                 new UniScalar(0.0F, 50)
             );
             hotkey.Text = "MIS";
+            hotkey.ImageFrame = "hotbar.missile";
             Children.Add(hotkey);
 
             // machine gun
@@ -64,6 +67,7 @@ namespace FusionC
                 new UniScalar(0.0F, 50)
             );
             hotkey.Text = "MG";
+            hotkey.ImageFrame = "hotbar.mg";
             Children.Add(hotkey);
         }
     }

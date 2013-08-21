@@ -8,6 +8,7 @@
   <resources>
     <font name="menu_font" contentPath="menu_font" />
     <bitmap name="menu_skin_bitmap" contentPath="menu_skin" />
+    <bitmap name="spritesheet" contentPath="spritesheet" />
   </resources>
 
   <frames>
@@ -52,6 +53,22 @@
       <text font="menu_font" hplacement="center" vplacement="center" color="#17daf7" />
     </frame>
 
+    <frame name="hotbar.cannon">
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="672" w="55" h="55"/>
+    </frame>
+
+    <frame name="hotbar.missile">
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1400" w="55" h="55"/>
+    </frame>
+
+    <frame name="hotbar.laser">
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1008" w="55" h="55"/>
+    </frame>
+
+    <frame name="hotbar.mg">
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1680" w="55" h="55"/>
+    </frame>
+    
     <frame name="label">
       <text font="menu_font" hplacement="left" vplacement="top" color="#FFFFFF" />
     </frame>

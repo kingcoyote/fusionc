@@ -11,5 +11,6 @@ namespace FusionC
     public class ImageButtonControl : ButtonControl
     {
         public Texture2D Image;
+        public string ImageFrame;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Nuclex.UserInterface;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Nuclex.UserInterface;
 using Nuclex.UserInterface.Visuals.Flat;
 using Nuclex.UserInterface.Controls.Desktop;
 
@@ -29,6 +30,7 @@ namespace FusionC
             }
 
             // Draw the button's frame
+            graphics.DrawElement(control.ImageFrame, controlBounds);
             graphics.DrawElement(states[stateIndex], controlBounds);
         }
 
