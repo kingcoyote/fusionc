@@ -30,8 +30,8 @@ namespace FusionC
             }
 
             // Draw the button's frame
-            graphics.DrawElement(control.ImageFrame, controlBounds);
-            graphics.DrawElement(states[stateIndex], controlBounds);
+            graphics.DrawElement("imagebutton" + states[stateIndex], controlBounds);
+            graphics.DrawElement(control.ImageFrame + states[stateIndex], controlBounds);
         }
 
         /// <summary>Names of the states the button control can be in</summary>
@@ -40,10 +40,10 @@ namespace FusionC
         ///   any garbage from forming during rendering.
         /// </remarks>
         private static readonly string[] states = new string[] {
-          "button.disabled",
-          "button.normal",
-          "button.highlighted",
-          "button.depressed"
+          ".disabled",
+          ".normal",
+          ".highlighted",
+          ".depressed"
         };
 
     }
