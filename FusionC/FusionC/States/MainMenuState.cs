@@ -18,8 +18,8 @@ namespace FusionC.States
         public MainMenuState(FusionGame game) : base(game)
         {
             var mainMenuDialog = new MainMenuDialog();
-            mainMenuDialog.Bounds.Location.X = game.GraphicsDevice.Viewport.TitleSafeArea.Width - 25 - mainMenuDialog.Bounds.Size.X;
-            mainMenuDialog.Bounds.Location.Y = game.GraphicsDevice.Viewport.TitleSafeArea.Height - 25 - mainMenuDialog.Bounds.Size.Y;
+            mainMenuDialog.Bounds.Location.X = Gui.Screen.Desktop.Bounds.Size.X - mainMenuDialog.Bounds.Size.X;
+            mainMenuDialog.Bounds.Location.Y = Gui.Screen.Desktop.Bounds.Size.Y - mainMenuDialog.Bounds.Size.Y;
             mainMenuDialog.OnExitButtonPressed += ExitConfirmation;
             mainMenuDialog.OnStartButtonPressed += (sender, args) => game.StartGame();
 

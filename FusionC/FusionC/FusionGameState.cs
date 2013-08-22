@@ -23,8 +23,8 @@ namespace FusionC
             };
 
             Gui.Screen.Desktop.Bounds = new UniRectangle(
-              new UniScalar(0.0f, 0.0f), new UniScalar(0.0f, 0.0f),
-              new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
+              25, 25,
+              new UniScalar(1.0f, -25.0F), new UniScalar(1.0f, -25.0F)
             );
 
             Gui.Initialize();

@@ -17,40 +17,48 @@ namespace FusionC
         private int _wave;
         private int _playerLives;
 
+        private CombatWaveDialog _combatWaveDialog;
+        private CombatPlayerDialog _combatPlayerDialog;
+        private CombatScoreDialog _combatScoreDialog;
+        private CombatWeaponDialog _combatWeaponDialog;
+
         private int _countdownTimer;
 
         public CombatGameState(FusionGame game) : base(game)
         {
+            InitializeComponent();
+            
             _gameState = StateList.Countdown;
             _wave = 1;
             _playerLives = 3;
             _countdownTimer = 5000;
 
             _playerShip = new PlayerShip();
+        }
 
-            WindowControl dialog;
+        private void InitializeComponent()
+        {
+            _combatWaveDialog = new CombatWaveDialog(this);
+            _combatPlayerDialog = new CombatPlayerDialog(this);
+            _combatScoreDialog = new CombatScoreDialog(this);
+            _combatWeaponDialog = new CombatWeaponDialog(this);
 
-            const int dialogPadding = 25;
+            _combatWaveDialog.Bounds.Location.X = 0;
+            _combatWaveDialog.Bounds.Location.Y = 0;
 
-            dialog = new CombatWaveDialog(this);
-            dialog.Bounds.Location.X = dialogPadding;
-            dialog.Bounds.Location.Y = dialogPadding;
-            Gui.Screen.Desktop.Children.Add(dialog);
+            _combatPlayerDialog.Bounds.Location.X = 0;
+            _combatPlayerDialog.Bounds.Location.Y = Gui.Screen.Desktop.Bounds.Size.Y - _combatPlayerDialog.Bounds.Size.Y;
 
-            dialog = new CombatPlayerDialog(this);
-            dialog.Bounds.Location.X = dialogPadding;
-            dialog.Bounds.Location.Y = Gui.Screen.Height - dialog.Bounds.Size.Y - dialogPadding;
-            Gui.Screen.Desktop.Children.Add(dialog);
+            _combatScoreDialog.Bounds.Location.X = 0;
+            _combatScoreDialog.Bounds.Location.Y = _combatWaveDialog.Bounds.Size.Y + 25;
 
-            dialog = new CombatScoreDialog(this);
-            dialog.Bounds.Location.X = Gui.Screen.Width - dialog.Bounds.Size.X - dialogPadding;
-            dialog.Bounds.Location.Y = Gui.Screen.Height - dialog.Bounds.Size.Y - dialogPadding;
-            Gui.Screen.Desktop.Children.Add(dialog);
+            _combatWeaponDialog.Bounds.Location.X = Gui.Screen.Desktop.Bounds.Size.X - _combatWeaponDialog.Bounds.Size.X;
+            _combatWeaponDialog.Bounds.Location.Y = 0;
 
-            dialog = new CombatWeaponDialog(this);
-            dialog.Bounds.Location.X = Gui.Screen.Width - dialog.Bounds.Size.X - dialogPadding;
-            dialog.Bounds.Location.Y = dialogPadding;
-            Gui.Screen.Desktop.Children.Add(dialog);
+            Gui.Screen.Desktop.Children.Add(_combatWaveDialog);
+            Gui.Screen.Desktop.Children.Add(_combatPlayerDialog);
+            Gui.Screen.Desktop.Children.Add(_combatScoreDialog);
+            Gui.Screen.Desktop.Children.Add(_combatWeaponDialog);
         }
 
         public override void Update(GameTime gametime)

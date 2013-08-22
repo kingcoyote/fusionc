@@ -17,14 +17,17 @@ namespace FusionC
             _healthbar.Bounds = new UniRectangle(
                 new UniScalar(0.0F, 15),    
                 new UniScalar(0.0F, 15),
-                new UniScalar(270),
-                new UniScalar(35)
+                new UniScalar(1.0F, -30),
+                new UniScalar(1.0F, -30)
             );
             _healthbar.Progress = 0.5F;
 
             Children.Add(_healthbar);
 
-            Bounds = new UniRectangle(0, 0, 300, 80);
+            Bounds = new UniRectangle(
+                new UniScalar(0.0F, 0.0F), new UniScalar(0.0F, 0.0F), 
+                new UniScalar(1.0F, 0.0F), new UniScalar(0.0F, 65.0F)
+            );
             EnableDragging = false;
         }
     }
