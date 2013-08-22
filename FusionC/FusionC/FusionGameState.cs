@@ -13,7 +13,7 @@ namespace FusionC
         protected FusionGame Game;
         protected GameComponentCollection Components;
 
-        public FusionGameState(FusionGame game)
+        protected FusionGameState(FusionGame game)
         {
             Game = game;
 
