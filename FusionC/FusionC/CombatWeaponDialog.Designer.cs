@@ -9,66 +9,65 @@ namespace FusionC
 {
     partial class CombatWeaponDialog
     {
+        private ImageButtonControl _cannonButton;
+        private ImageButtonControl _missileButton;
+        private ImageButtonControl _laserButton;
+        private ImageButtonControl _mgButton;
+
         private void InitializeComponent()
         {
-            Bounds = new UniRectangle(0, 0, 275, 80);
-            EnableDragging = false;
-
-            // create row of hotbar icons for the 4 weapon types:
-            //   cannon
-            //   laser
-            //   missile
-            //   machinegun
-
-            ImageButtonControl hotkey;
+            _cannonButton = new ImageButtonControl();
+            _laserButton = new ImageButtonControl();
+            _missileButton = new ImageButtonControl();
+            _mgButton = new ImageButtonControl();
 
             // cannon
-            hotkey = new ImageButtonControl();
-            hotkey.Bounds = new UniRectangle(
+            _cannonButton = new ImageButtonControl();
+            _cannonButton.Bounds = new UniRectangle(
                 new UniScalar(0.0F, 15),
                 new UniScalar(0.0F, 15),
                 new UniScalar(0.0F, 50), 
                 new UniScalar(0.0F, 50)
             );
-            hotkey.Text = "CAN";
-            hotkey.ImageFrame = "hotbar.cannon";
-            Children.Add(hotkey);
+            _cannonButton.ImageFrame = "hotbar.cannon";
 
             // laser
-            hotkey = new ImageButtonControl();
-            hotkey.Bounds = new UniRectangle(
+            _laserButton = new ImageButtonControl();
+            _laserButton.Bounds = new UniRectangle(
                 new UniScalar(0.0F, 80),
                 new UniScalar(0.0F, 15),
                 new UniScalar(0.0F, 50),
                 new UniScalar(0.0F, 50)
             );
-            hotkey.Text = "LAS";
-            hotkey.ImageFrame = "hotbar.laser";
-            Children.Add(hotkey);
+            _laserButton.ImageFrame = "hotbar.laser";
 
             // missile
-            hotkey = new ImageButtonControl();
-            hotkey.Bounds = new UniRectangle(
+            _missileButton = new ImageButtonControl();
+            _missileButton.Bounds = new UniRectangle(
                 new UniScalar(0.0F, 145),
                 new UniScalar(0.0F, 15),
                 new UniScalar(0.0F, 50),
                 new UniScalar(0.0F, 50)
             );
-            hotkey.Text = "MIS";
-            hotkey.ImageFrame = "hotbar.missile";
-            Children.Add(hotkey);
+            _missileButton.ImageFrame = "hotbar.missile";
 
             // machine gun
-            hotkey = new ImageButtonControl();
-            hotkey.Bounds = new UniRectangle(
+            _mgButton = new ImageButtonControl();
+            _mgButton.Bounds = new UniRectangle(
                 new UniScalar(0.0F, 210),
                 new UniScalar(0.0F, 15),
                 new UniScalar(0.0F, 50),
                 new UniScalar(0.0F, 50)
             );
-            hotkey.Text = "MG";
-            hotkey.ImageFrame = "hotbar.mg";
-            Children.Add(hotkey);
+            _mgButton.ImageFrame = "hotbar.mg";
+
+            Children.Add(_cannonButton);
+            Children.Add(_laserButton);
+            Children.Add(_missileButton);
+            Children.Add(_mgButton);
+
+            Bounds = new UniRectangle(0, 0, 275, 80);
+            EnableDragging = false;
         }
     }
 }
