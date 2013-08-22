@@ -9,6 +9,7 @@
     <font name="menu_font" contentPath="menu_font" />
     <bitmap name="menu_skin_bitmap" contentPath="menu_skin" />
     <bitmap name="spritesheet" contentPath="spritesheet" />
+    <bitmap name="clear" contentPath="clear" />
   </resources>
 
   <frames>
@@ -53,20 +54,139 @@
       <text font="menu_font" hplacement="center" vplacement="center" color="#17daf7" />
     </frame>
 
-    <frame name="hotbar.cannon">
-      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="672" w="55" h="55"/>
+    <frame name="imagebutton.normal">
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="top" x="21" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="top" x="31" y="0" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="top" x="32" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="stretch" x="21" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="stretch" x="31" y="10" w="1" h="1" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="stretch" x="32" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="bottom" x="21" y="11" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="bottom" x="31" y="11" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="bottom" x="32" y="11" w="10" h="10" />
+      <text font="menu_font" hplacement="center" vplacement="center" color="#EFEFEF" />
     </frame>
 
-    <frame name="hotbar.missile">
-      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1400" w="55" h="55"/>
+    <frame name="imagebutton.highlighted">
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="top" x="42" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="top" x="52" y="0" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="top" x="53" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="stretch" x="42" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="stretch" x="52" y="10" w="1" h="1" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="stretch" x="53" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="bottom" x="42" y="11" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="bottom" x="52" y="11" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="bottom" x="53" y="11" w="10" h="10" />
+      <text font="menu_font" hplacement="center" vplacement="center" color="#FFF000" />
     </frame>
 
-    <frame name="hotbar.laser">
-      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1008" w="55" h="55"/>
+    <frame name="imagebutton.depressed">
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="top" x="42" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="top" x="52" y="0" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="top" x="53" y="0" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="stretch" x="42" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="stretch" x="52" y="10" w="1" h="1" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="stretch" x="53" y="10" w="10" h="1" />
+      <region source="menu_skin_bitmap" hplacement="left" vplacement="bottom" x="42" y="11" w="10" h="10" />
+      <region source="menu_skin_bitmap" hplacement="stretch" vplacement="bottom" x="52" y="11" w="1" h="10" />
+      <region source="menu_skin_bitmap" hplacement="right" vplacement="bottom" x="53" y="11" w="10" h="10" />
+      <text font="menu_font" hplacement="center" vplacement="center" color="#17daf7" />
     </frame>
 
-    <frame name="hotbar.mg">
-      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1680" w="55" h="55"/>
+    <frame name="hotbar.cannon.normal">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="672" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.cannon.depressed">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="56" y="672" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.cannon.highlighted">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="112" y="672" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.missile.normal">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1400" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.missile.depressed">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="56" y="1400" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.missile.highlighted">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="112" y="1400" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.laser.normal">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1008" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.laser.depressed">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="56" y="1008" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.laser.highlighted">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="112" y="1008" w="56" h="56"/>
+    </frame>
+    
+    <frame name="hotbar.mg.normal">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="0" y="1680" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.mg.depressed">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="56" y="1680" w="56" h="56"/>
+    </frame>
+
+    <frame name="hotbar.mg.highlighted">
+      <region source="clear" hplacement="left" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="right" vplacement="stretch" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
+      <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
+      <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="112" y="1680" w="56" h="56"/>
     </frame>
     
     <frame name="label">
