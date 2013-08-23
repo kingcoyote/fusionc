@@ -17,7 +17,6 @@ namespace FusionC
         private int _wave;
         private int _playerLives;
 
-        private CombatWaveDialog _combatWaveDialog;
         private CombatPlayerDialog _combatPlayerDialog;
         private CombatScoreDialog _combatScoreDialog;
         private CombatWeaponDialog _combatWeaponDialog;
@@ -38,27 +37,22 @@ namespace FusionC
 
         private void InitializeComponent()
         {
-            _combatWaveDialog = new CombatWaveDialog(this);
             _combatPlayerDialog = new CombatPlayerDialog(this);
             _combatScoreDialog = new CombatScoreDialog(this);
             _combatWeaponDialog = new CombatWeaponDialog(this);
 
-            _combatWaveDialog.Bounds.Location = new UniVector(0, 0);
+            _combatScoreDialog.Bounds.Location = new UniVector(0, 0);
 
             _combatPlayerDialog.Bounds.Location = new UniVector(
                 0,
                 new UniScalar(1.0F, 0 - _combatPlayerDialog.Bounds.Size.Y.Offset)
             );
 
-            _combatScoreDialog.Bounds.Location.X = 0;
-            _combatScoreDialog.Bounds.Location.Y = _combatWaveDialog.Bounds.Size.Y + 25;
-
             _combatWeaponDialog.Bounds.Location = new UniVector(
                 new UniScalar(1.0F, 0 - _combatWeaponDialog.Bounds.Size.X.Offset), 
                 0
             );
 
-            Gui.Screen.Desktop.Children.Add(_combatWaveDialog);
             Gui.Screen.Desktop.Children.Add(_combatPlayerDialog);
             Gui.Screen.Desktop.Children.Add(_combatScoreDialog);
             Gui.Screen.Desktop.Children.Add(_combatWeaponDialog);
