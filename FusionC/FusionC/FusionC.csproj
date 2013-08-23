@@ -173,10 +173,6 @@
     <Compile Include="CombatScoreDialog.Designer.cs">
       <DependentUpon>CombatScoreDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="CombatWaveDialog.cs" />
-    <Compile Include="CombatWaveDialog.Designer.cs">
-      <DependentUpon>CombatWaveDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="CombatWeaponDialog.cs" />
     <Compile Include="CombatWeaponDialog.Designer.cs">
       <DependentUpon>CombatWeaponDialog.cs</DependentUpon>
