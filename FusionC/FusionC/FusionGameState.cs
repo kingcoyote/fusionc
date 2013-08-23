@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Nuclex.Game.States;
 using Nuclex.Input;
 using Nuclex.UserInterface;
+using Nuclex.UserInterface.Controls.Desktop;
 using Nuclex.UserInterface.Visuals.Flat;
 
 namespace FusionC
@@ -23,8 +24,8 @@ namespace FusionC
             };
 
             Gui.Screen.Desktop.Bounds = new UniRectangle(
-              25, 25,
-              new UniScalar(1.0f, -25.0F), new UniScalar(1.0f, -25.0F)
+              new UniScalar(0.0F, 25.0F), new UniScalar(0.0F, 25.0F),
+              new UniScalar(1.0f, -50.0F), new UniScalar(1.0f, -50.0F)
             );
 
             Gui.Initialize();

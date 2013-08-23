@@ -43,17 +43,20 @@ namespace FusionC
             _combatScoreDialog = new CombatScoreDialog(this);
             _combatWeaponDialog = new CombatWeaponDialog(this);
 
-            _combatWaveDialog.Bounds.Location.X = 0;
-            _combatWaveDialog.Bounds.Location.Y = 0;
+            _combatWaveDialog.Bounds.Location = new UniVector(0, 0);
 
-            _combatPlayerDialog.Bounds.Location.X = 0;
-            _combatPlayerDialog.Bounds.Location.Y = Gui.Screen.Desktop.Bounds.Size.Y - _combatPlayerDialog.Bounds.Size.Y;
+            _combatPlayerDialog.Bounds.Location = new UniVector(
+                0,
+                new UniScalar(1.0F, 0 - _combatPlayerDialog.Bounds.Size.Y.Offset)
+            );
 
             _combatScoreDialog.Bounds.Location.X = 0;
             _combatScoreDialog.Bounds.Location.Y = _combatWaveDialog.Bounds.Size.Y + 25;
 
-            _combatWeaponDialog.Bounds.Location.X = Gui.Screen.Desktop.Bounds.Size.X - _combatWeaponDialog.Bounds.Size.X;
-            _combatWeaponDialog.Bounds.Location.Y = 0;
+            _combatWeaponDialog.Bounds.Location = new UniVector(
+                new UniScalar(1.0F, 0 - _combatWeaponDialog.Bounds.Size.X.Offset), 
+                0
+            );
 
             Gui.Screen.Desktop.Children.Add(_combatWaveDialog);
             Gui.Screen.Desktop.Children.Add(_combatPlayerDialog);

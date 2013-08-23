@@ -66,7 +66,10 @@ namespace FusionC
             Children.Add(_missileButton);
             Children.Add(_mgButton);
 
-            Bounds = new UniRectangle(0, 0, 275, 80);
+            Bounds = new UniRectangle(
+                new UniScalar(0.0F, 0.0F), new UniScalar(0.0F, 0.0F),
+                new UniScalar(0.0F, 275.0F), new UniScalar(0.0F, 80F)
+            );
             EnableDragging = false;
         }
     }
