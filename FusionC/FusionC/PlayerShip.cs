@@ -12,8 +12,8 @@ namespace FusionC
     class PlayerShip : GraphicsDeviceDrawableComponent
     {
         private readonly Texture2D _ship;
-        public int X;
-        public int Y;
+        public float X;
+        public float Y;
 
         public PlayerShip(IServiceProvider serviceProvider) : base(serviceProvider)
         {

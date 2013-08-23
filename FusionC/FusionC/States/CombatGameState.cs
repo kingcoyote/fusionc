@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Nuclex.Input;
 using Nuclex.UserInterface;
 using Nuclex.UserInterface.Controls.Desktop;
 
@@ -21,6 +22,8 @@ namespace FusionC
         private CombatScoreDialog _combatScoreDialog;
         private CombatWeaponDialog _combatWeaponDialog;
 
+        private float _playerVelocity = 0;
+
         private int _countdownTimer;
 
         public CombatGameState(FusionGame game) : base(game)
@@ -36,10 +39,54 @@ namespace FusionC
 
             _playerShip = new PlayerShip(game.Services);
             _playerShip.Initialize();
-            _playerShip.X = graphics.GraphicsDevice.Viewport.TitleSafeArea.Width/2;
+            _playerShip.X = graphics.GraphicsDevice.Viewport.TitleSafeArea.Width/2.0;
             _playerShip.Y = graphics.GraphicsDevice.Viewport.TitleSafeArea.Height - 150;
 
             Components.Add(_playerShip);
+
+            var input = (InputManager) game.Services.GetService(typeof (IInputService));
+            input.GetKeyboard().KeyPressed += KeyPressed;
+            input.GetKeyboard().KeyReleased += KeyReleased;
+        }
+
+        private void KeyReleased(Keys key)
+        {
+            switch (_gameState)
+            {
+                case StateList.Action:
+                    switch (key)
+                    {
+                        case Keys.A:
+                            _playerVelocity += 1;
+                            break;
+                        case Keys.D:
+                            _playerVelocity -= 1;
+                            break;
+                    }
+
+                    _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
+                    break;
+            }
+        }
+
+        private void KeyPressed(Keys key)
+        {
+            switch(_gameState)
+            {
+                case StateList.Action:
+                    switch (key)
+                    {
+                        case Keys.A:
+                            _playerVelocity -= 1;
+                            break;
+                        case Keys.D:
+                            _playerVelocity += 1;
+                            break;
+                    }
+
+                    _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
+                    break;
+            }
         }
 
         private void InitializeComponent()
@@ -70,6 +117,8 @@ namespace FusionC
             base.Update(gametime);
 
             UpdateGameState(gametime);
+
+            _playerShip.X += gametime.ElapsedGameTime.Milliseconds/1000.0F*200.0F*_playerVelocity;
         }
 
         private void UpdateGameState(GameTime gametime)
