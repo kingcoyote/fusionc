@@ -32,7 +32,14 @@ namespace FusionC
             _playerLives = 3;
             _countdownTimer = 5000;
 
-            _playerShip = new PlayerShip();
+            var graphics = (GraphicsDeviceManager) game.Services.GetService(typeof (IGraphicsDeviceManager));
+
+            _playerShip = new PlayerShip(game.Services);
+            _playerShip.Initialize();
+            _playerShip.X = graphics.GraphicsDevice.Viewport.TitleSafeArea.Width/2;
+            _playerShip.Y = graphics.GraphicsDevice.Viewport.TitleSafeArea.Height - 150;
+
+            Components.Add(_playerShip);
         }
 
         private void InitializeComponent()

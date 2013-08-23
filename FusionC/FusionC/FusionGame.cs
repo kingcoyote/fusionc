@@ -1,5 +1,6 @@
 using FusionC.States;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Nuclex.Game.States;
 using Nuclex.Input;
@@ -44,6 +45,8 @@ namespace FusionC
             _gsm.Push(new MainMenuState(this));
 
             _gsm.Initialize();
+
+            Services.AddService(typeof(ContentManager), Content);
         }
 
         /// <summary>
