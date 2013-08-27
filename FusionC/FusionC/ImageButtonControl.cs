@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Nuclex.UserInterface.Controls;
-using Nuclex.UserInterface.Controls.Desktop;
+﻿using Nuclex.UserInterface.Controls;
 
 namespace FusionC
 {
-    public class ImageButtonControl : ButtonControl
+    public class ImageButtonControl : PressableControl
     {
-        public Texture2D Image;
         public string ImageFrame;
     }
 }
