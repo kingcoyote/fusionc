@@ -10,6 +10,7 @@
     <bitmap name="menu_skin_bitmap" contentPath="menu_skin" />
     <bitmap name="spritesheet" contentPath="spritesheet" />
     <bitmap name="clear" contentPath="clear" />
+    <bitmap name="HammerFrames" contentPath="HammerFrames"/>
   </resources>
 
   <frames>
@@ -210,6 +211,10 @@
       <region source="clear" hplacement="stretch" vplacement="top" x="0" y="0" w="5" h="5"/>
       <region source="clear" hplacement="stretch" vplacement="bottom" x="0" y="0" w="5" h="5"/>
       <region source="spritesheet" hplacement="stretch" vplacement="stretch" x="112" y="1680" w="56" h="56"/>
+    </frame>
+
+    <frame name="playerlives">
+      <region source="HammerFrames" hplacement="stretch" vplacement="stretch" x="300" y="0" w="100" h="80"/>
     </frame>
     
     <frame name="label">

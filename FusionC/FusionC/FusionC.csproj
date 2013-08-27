@@ -178,6 +178,7 @@
       <DependentUpon>CombatWeaponDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FlatImageButtonControlRenderer.cs" />
+    <Compile Include="FlatTiledIconControlRenderer.cs" />
     <Compile Include="ImageButtonControl.cs" />
     <Compile Include="PlayerShip.cs" />
     <Compile Include="States\CombatGameState.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="FusionGame.cs" />
     <Compile Include="States\MainMenuState.cs" />
+    <Compile Include="TiledIconControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
