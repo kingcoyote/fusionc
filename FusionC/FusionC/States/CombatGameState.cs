@@ -40,7 +40,7 @@ namespace FusionC
             _playerShip = new PlayerShip(game.Services);
             _playerShip.Initialize();
             _playerShip.X = graphics.GraphicsDevice.Viewport.TitleSafeArea.Width/2.0F;
-            _playerShip.Y = graphics.GraphicsDevice.Viewport.TitleSafeArea.Height - 150;
+            _playerShip.Y = graphics.GraphicsDevice.Viewport.TitleSafeArea.Height - 200;
 
             Components.Add(_playerShip);
 
