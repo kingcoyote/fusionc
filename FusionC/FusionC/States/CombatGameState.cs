@@ -54,6 +54,7 @@ namespace FusionC
             switch (_gameState)
             {
                 case StateList.Action:
+                case StateList.Countdown:
                     switch (key)
                     {
                         case Keys.A:
@@ -74,6 +75,7 @@ namespace FusionC
             switch(_gameState)
             {
                 case StateList.Action:
+                case StateList.Countdown:
                     switch (key)
                     {
                         case Keys.A:
@@ -118,7 +120,14 @@ namespace FusionC
 
             UpdateGameState(gametime);
 
-            _playerShip.X += gametime.ElapsedGameTime.Milliseconds/1000.0F*200.0F*_playerVelocity;
+            var graphics = (GraphicsDeviceManager) Game.Services.GetService(typeof (IGraphicsDeviceManager));
+
+            _playerShip.X += gametime.ElapsedGameTime.Milliseconds/1000.0F*300.0F*_playerVelocity;
+            _playerShip.X = MathHelper.Clamp(
+                _playerShip.X, 
+                100,
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Width - 100
+            );
         }
 
         private void UpdateGameState(GameTime gametime)
