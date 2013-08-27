@@ -63,6 +63,14 @@ namespace FusionC
                         case Keys.D:
                             _playerVelocity -= 1;
                             break;
+                        case Keys.D1:
+                        case Keys.D2:
+                        case Keys.D3:
+                        case Keys.D4:
+                            var keymap = new Dictionary<Keys, int>
+                                {{Keys.D1, 1}, {Keys.D2, 2}, {Keys.D3, 3}, {Keys.D4, 4}};
+                            _combatWeaponDialog.TriggerHotbar(keymap[key]);
+                            break;
                     }
 
                     _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
