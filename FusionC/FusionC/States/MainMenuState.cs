@@ -29,7 +29,7 @@ namespace FusionC.States
 
             Game.IsMouseVisible = true;
 
-            _spriteBatch = new SpriteBatch(game.GraphicsDevice);
+            _spriteBatch =(SpriteBatch)game.Services.GetService(typeof(SpriteBatch));
             _menuBg = Game.Content.Load<Texture2D>("menu_bg");
         }
 

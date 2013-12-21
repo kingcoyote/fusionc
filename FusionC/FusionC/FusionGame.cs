@@ -56,7 +56,7 @@ namespace FusionC
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            Services.AddService(typeof(SpriteBatch), new SpriteBatch(GraphicsDevice));
         }
 
         /// <summary>

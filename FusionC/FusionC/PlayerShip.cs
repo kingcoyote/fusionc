@@ -15,24 +15,24 @@ namespace FusionC
         public float X;
         public float Y;
 
+        private SpriteBatch _spriteBatch;
+
         public PlayerShip(IServiceProvider serviceProvider) : base(serviceProvider)
         {
             var content = (ContentManager)serviceProvider.GetService(typeof(ContentManager));
             _ship = content.Load<Texture2D>("HammerFrames");
+            _spriteBatch = (SpriteBatch) serviceProvider.GetService(typeof (SpriteBatch));
         }
         public PlayerShip(IGraphicsDeviceService graphicsDeviceService) : base(graphicsDeviceService) { }
 
         public override void Draw(GameTime gameTime)
         {
-            var spritebatch = new SpriteBatch(GraphicsDevice);
-            spritebatch.Begin();
-            spritebatch.Draw(
+            _spriteBatch.Draw(
                 _ship, 
                 new Vector2(X - 50, Y - 40),
                 new Rectangle(300, 0, 100, 80),
                 Color.White
             );
-            spritebatch.End();
         }
     }
 }

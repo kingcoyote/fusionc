@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Nuclex.Game.States;
 using Nuclex.Input;
 using Nuclex.UserInterface;
@@ -16,10 +17,13 @@ namespace FusionC
         protected GameComponentCollection Components;
 
         private IInputCapturer _capturer;
+        private SpriteBatch _spriteBatch;
 
         protected FusionGameState(FusionGame game)
         {
             Game = game;
+
+            _spriteBatch = (SpriteBatch) game.Services.GetService(typeof (SpriteBatch));
 
             Gui = new GuiManager(Game.Graphics, Game.Input)
             {
@@ -49,10 +53,14 @@ namespace FusionC
 
         public override void Draw(GameTime gametime)
         {
+            _spriteBatch.Begin();
+
             foreach(var component in (from IDrawable c in Components orderby c.DrawOrder select c).ToArray())
             {
                 component.Draw(gametime);
             }
+            
+            _spriteBatch.End();
         }
 
         public override void Update(GameTime gametime)
