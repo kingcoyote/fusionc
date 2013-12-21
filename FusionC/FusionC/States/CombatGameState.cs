@@ -60,22 +60,30 @@ namespace FusionC
                     switch (key)
                     {
                         case Keys.A:
+                            // move left
                             _playerVelocity += 1;
+                            _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
                             break;
                         case Keys.D:
+                            // move right
                             _playerVelocity -= 1;
+                            _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
                             break;
                         case Keys.D1:
                         case Keys.D2:
                         case Keys.D3:
                         case Keys.D4:
+                            // switch weapons
                             var keymap = new Dictionary<Keys, int>
                                 {{Keys.D1, 1}, {Keys.D2, 2}, {Keys.D3, 3}, {Keys.D4, 4}};
                             _combatWeaponDialog.TriggerHotbar(keymap[key]);
                             break;
+                        case Keys.Space:
+                            // fire weapon
+                            break;
                     }
 
-                    _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
+                    
                     break;
             }
         }
@@ -90,13 +98,13 @@ namespace FusionC
                     {
                         case Keys.A:
                             _playerVelocity -= 1;
+                            _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
                             break;
                         case Keys.D:
                             _playerVelocity += 1;
+                            _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
                             break;
                     }
-
-                    _playerVelocity = MathHelper.Clamp(_playerVelocity, -1, 1);
                     break;
             }
         }
