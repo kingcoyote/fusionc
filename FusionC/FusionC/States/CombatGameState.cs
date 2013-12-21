@@ -47,6 +47,8 @@ namespace FusionC
             var input = (InputManager) game.Services.GetService(typeof (IInputService));
             input.GetKeyboard().KeyPressed += KeyPressed;
             input.GetKeyboard().KeyReleased += KeyReleased;
+
+            _combatPlayerDialog.SetPlayerLives(_playerLives);
         }
 
         private void KeyReleased(Keys key)

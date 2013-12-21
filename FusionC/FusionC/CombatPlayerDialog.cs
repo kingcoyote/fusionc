@@ -16,5 +16,10 @@ namespace FusionC
 
             _gameState = gameState;
         }
+
+        public void SetPlayerLives(int lives)
+        {
+            _playerlives.Count = lives;
+        }
     }
 }
