@@ -4,6 +4,7 @@ using Nuclex.Game.States;
 using Nuclex.Input;
 using Nuclex.UserInterface;
 using Nuclex.UserInterface.Controls.Desktop;
+using Nuclex.UserInterface.Input;
 using Nuclex.UserInterface.Visuals.Flat;
 
 namespace FusionC
@@ -13,6 +14,8 @@ namespace FusionC
         protected GuiManager Gui;
         protected FusionGame Game;
         protected GameComponentCollection Components;
+
+        private IInputCapturer _capturer;
 
         protected FusionGameState(FusionGame game)
         {
@@ -58,6 +61,20 @@ namespace FusionC
             {
                 component.Update(gametime);
             }
+        }
+
+        protected override void OnPause()
+        {
+            Gui.Visible = false;
+            _capturer = Gui.InputCapturer;
+            Gui.InputCapturer = null;
+        }
+
+        protected override void OnResume()
+        {
+            Gui.Visible = true;
+            Gui.InputCapturer = _capturer;
+            _capturer = null;
         }
     }
 }
